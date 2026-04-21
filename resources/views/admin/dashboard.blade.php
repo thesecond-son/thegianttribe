@@ -1,78 +1,175 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('title', 'Dashboard')
+@section('page-title', 'Dashboard')
 
-<section style="padding:60px 0;">
-    <div class="container">
+@section('admin-content')
 
-        <!-- HEADER ROW -->
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;">
+    {{-- Success Alert --}}
+    @if (session('success'))
+        <div class="alert alert-success">
+            ✓ {{ session('success') }}
+        </div>
+    @endif
 
-            <h1 style="color:#0D2D8A;margin:0;">
-                Admin Dashboard
-            </h1>
+    {{-- ---- STATS ---- --}}
+    <div class="stats-grid">
 
-            <!-- LOGOUT BUTTON -->
-            <a href="{{ route('admin.logout') }}"
-               style="background:#e11d48;color:white;padding:10px 15px;text-decoration:none;border-radius:6px;font-weight:600;">
-                Logout
-            </a>
-
+        <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--blue">🎓</div>
+            <div>
+                <div class="stat-card__num">{{ $studentCount }}</div>
+                <div class="stat-card__label">Student Applications</div>
+            </div>
         </div>
 
-        <!-- STUDENTS -->
-        <h2 style="margin-bottom:10px;">Student Applications</h2>
-
-        <div style="overflow-x:auto; margin-bottom:50px;">
-            <table style="width:100%; border-collapse:collapse;">
-                <tr style="background:#0D2D8A;color:white;">
-                    <th style="padding:10px;">Name</th>
-                    <th>Age</th>
-                    <th>School</th>
-                    <th>Class</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                </tr>
-
-                @foreach($students as $student)
-                <tr style="border-bottom:1px solid #ddd;">
-                    <td style="padding:10px;">{{ $student->full_name }}</td>
-                    <td>{{ $student->age }}</td>
-                    <td>{{ $student->school }}</td>
-                    <td>{{ $student->class_grade }}</td>
-                    <td>{{ $student->phone }}</td>
-                    <td>{{ $student->email }}</td>
-                </tr>
-                @endforeach
-            </table>
+        <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--gold">🤝</div>
+            <div>
+                <div class="stat-card__num">{{ $partnerCount }}</div>
+                <div class="stat-card__label">Partner Applications</div>
+            </div>
         </div>
 
-        <!-- PARTNERS -->
-        <h2 style="margin-bottom:10px;">Partner Applications</h2>
-
-        <div style="overflow-x:auto;">
-            <table style="width:100%; border-collapse:collapse;">
-                <tr style="background:#2255CC;color:white;">
-                    <th style="padding:10px;">Name</th>
-                    <th>Role</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Interest</th>
-                </tr>
-
-                @foreach($partners as $partner)
-                <tr style="border-bottom:1px solid #ddd;">
-                    <td style="padding:10px;">{{ $partner->full_name }}</td>
-                    <td>{{ $partner->organization_role }}</td>
-                    <td>{{ $partner->email }}</td>
-                    <td>{{ $partner->phone }}</td>
-                    <td>{{ $partner->interest_area }}</td>
-                </tr>
-                @endforeach
-            </table>
+        <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--blue">📋</div>
+            <div>
+                <div class="stat-card__num">{{ $studentCount + $partnerCount }}</div>
+                <div class="stat-card__label">Total Applications</div>
+            </div>
         </div>
 
     </div>
-</section>
+
+    {{-- ---- STUDENTS TABLE ---- --}}
+    <div id="students">
+
+        <div class="admin-section-title">
+            <h2>🎓 Student Applications</h2>
+        </div>
+
+        <form method="GET" class="search-bar" action="{{ route('admin.dashboard') }}#students">
+            <input type="text" name="student_search"
+                   placeholder="Search by name, school, or email…"
+                   value="{{ request('student_search') }}">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="table-wrap">
+            <div style="overflow-x:auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>School</th>
+                            <th>Class</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($students as $student)
+                            <tr>
+                                <td>{{ $student->full_name }}</td>
+                                <td>{{ $student->age }}</td>
+                                <td>{{ $student->school }}</td>
+                                <td>{{ $student->class_grade }}</td>
+                                <td>{{ $student->phone }}</td>
+                                <td>{{ $student->email }}</td>
+                                <td class="actions">
+
+                                    <a href="{{ route('student.view', $student->id) }}" class="btn-view">
+                                        View
+                                    </a>
+
+                                    <form action="{{ route('student.delete', $student->id) }}" method="POST"
+                                          onsubmit="return confirm('Delete this student application?');"
+                                          style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn-delete" type="submit">Delete</button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        @empty
+                            <tr class="empty-row">
+                                <td colspan="7">
+                                    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 0;">
+                                        <span style="font-size:2rem;">📭</span>
+                                        No student applications yet
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    {{-- ---- PARTNERS TABLE ---- --}}
+    <div id="partners">
+
+        <div class="admin-section-title">
+            <h2>🤝 Partner Applications</h2>
+        </div>
+
+        <div class="table-wrap">
+            <div style="overflow-x:auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Organization / Role</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Interest Area</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($partners as $partner)
+                            <tr>
+                                <td>{{ $partner->full_name }}</td>
+                                <td>{{ $partner->organization_role }}</td>
+                                <td>{{ $partner->email }}</td>
+                                <td>{{ $partner->phone }}</td>
+                                <td>{{ $partner->interest_area }}</td>
+                                <td class="actions">
+
+                                    <a href="{{ route('partner.view', $partner->id) }}" class="btn-view">
+                                        View
+                                    </a>
+
+                                    <form action="{{ route('partner.delete', $partner->id) }}" method="POST"
+                                          onsubmit="return confirm('Delete this partner application?');"
+                                          style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn-delete" type="submit">Delete</button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        @empty
+                            <tr class="empty-row">
+                                <td colspan="6">
+                                    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 0;">
+                                        <span style="font-size:2rem;">📭</span>
+                                        No partner applications yet
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
 
 @endsection
