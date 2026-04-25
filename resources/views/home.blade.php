@@ -8,32 +8,48 @@
 <section class="hero">
     <div class="hero__bg"></div>
     <div class="hero__dots"></div>
-    <div class="hero__accent-ring"></div>
 
     <div class="container">
-        <div class="hero__content">
+        <div class="hero__split">
 
-            <div class="hero__eyebrow">
-                <i class="bi bi-stars"></i> Home of Possibilities
+            {{-- Left: Text Content --}}
+            <div class="hero__content">
+
+                <div class="hero__eyebrow">
+                    <i class="bi bi-stars"></i> Home of Possibilities
+                </div>
+
+                <h1>
+                    Raising a<br>
+                    <span class="accent">Giant Generation</span>
+                </h1>
+
+                <p>
+                    We empower young people with the knowledge, mindset, and community
+                    they need to achieve greatness and make a lasting impact in the world.
+                </p>
+
+                <div class="hero__buttons">
+                    <a href="{{ route('join') }}" class="btn btn-primary btn-lg">
+                        Join the Community
+                    </a>
+                    <a href="{{ route('about') }}" class="btn btn-outline btn-lg">
+                        Learn More
+                    </a>
+                </div>
+
             </div>
 
-            <h1>
-                Raising a<br>
-                <span class="accent">Giant Generation</span>
-            </h1>
-
-            <p>
-                We empower young people with the knowledge, mindset, and community
-                they need to achieve greatness and make a lasting impact in the world.
-            </p>
-
-            <div class="hero__buttons">
-                <a href="{{ route('join') }}" class="btn btn-primary btn-lg">
-                    Join the Community
-                </a>
-                <a href="{{ route('about') }}" class="btn btn-outline btn-lg">
-                    Learn More
-                </a>
+            {{-- Right: Photo --}}
+            <div class="hero__photo">
+                <div class="hero__photo-wrap">
+                    <img src="{{ asset('images/gallery/IMG_20260416_004056_654.jpg') }}"
+                         alt="TGT outreach — Raising Young People">
+                </div>
+                <div class="hero__photo-badge">
+                    <i class="bi bi-people-fill" style="color:var(--navy);font-size:1rem;"></i>
+                    <span>Real Impact. Real People.</span>
+                </div>
             </div>
 
         </div>
@@ -96,8 +112,8 @@
             {{-- Visual --}}
             <div class="about-preview__visual fade-up">
                 <div class="about-preview__img-wrap">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
-                         alt="Young people in community session">
+                    <img src="{{ asset('images/gallery/IMG_20260416_003852_116.jpg') }}"
+                         alt="TGT team with award recipients">
                 </div>
                 <div class="about-preview__badge">
                     <div class="num">100%</div>
@@ -264,5 +280,84 @@
         </div>
     </div>
 </section>
+
+{{-- Hero Split Layout Styles --}}
+<style>
+    .hero__split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: clamp(40px, 6vw, 80px);
+        min-height: 92vh;
+        padding: 80px 0 60px;
+    }
+
+    .hero__photo {
+        position: relative;
+        animation: heroFadeIn 1s var(--ease-out) 0.3s both;
+    }
+
+    .hero__photo-wrap {
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        position: relative;
+    }
+
+    .hero__photo-wrap::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(8, 30, 94, 0.5) 100%
+        );
+        z-index: 1;
+        border-radius: var(--radius-xl);
+    }
+
+    .hero__photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
+
+    .hero__photo-badge {
+        position: absolute;
+        bottom: -16px;
+        left: 24px;
+        background: var(--gold);
+        color: var(--navy-dark);
+        padding: 12px 20px;
+        border-radius: var(--radius-pill);
+        font-weight: 700;
+        font-size: 0.88rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: var(--shadow-lg);
+        z-index: 2;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+        .hero__split {
+            grid-template-columns: 1fr;
+            min-height: auto;
+            padding: 60px 0 80px;
+        }
+
+        .hero__photo {
+            order: -1;
+        }
+
+        .hero__photo-wrap {
+            aspect-ratio: 16/9;
+        }
+    }
+</style>
 
 @endsection
