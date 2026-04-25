@@ -66,7 +66,9 @@
                         they will flourish.
                     </p>
                     <div style="display:flex;align-items:center;gap:12px;">
-                        <div style="width:40px;height:40px;background:var(--sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">👤</div>
+                        <div style="width:40px;height:40px;background:var(--sky);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                            <i class="bi bi-person-fill" style="font-size:1.2rem;color:var(--navy);"></i>
+                        </div>
                         <div>
                             <div style="font-weight:700;color:var(--navy);font-size:0.9rem;">Colman Jeremiah</div>
                             <div style="font-size:0.8rem;color:var(--text-muted);">Founder & President, TGT</div>
@@ -80,7 +82,7 @@
                     <ul style="display:flex;flex-direction:column;gap:10px;">
                         @foreach(['Secondary School Students', 'Undergraduates', 'Schools & Institutions', 'Sponsors & Partners'] as $audience)
                         <li style="display:flex;align-items:center;gap:10px;font-size:0.92rem;color:var(--text-light);">
-                            <span style="width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;"></span>
+                            <i class="bi bi-chevron-right" style="color:var(--gold);font-size:0.75rem;flex-shrink:0;"></i>
                             {{ $audience }}
                         </li>
                         @endforeach
@@ -107,7 +109,9 @@
         <div class="mission-vision-grid">
 
             <div class="mv-card fade-up delay-1">
-                <div class="icon-box icon-box-navy" style="margin-bottom:20px;">🎯</div>
+                <div class="icon-box icon-box-navy" style="margin-bottom:20px;">
+                    <i class="bi bi-bullseye" style="color:var(--navy);font-size:1.4rem;"></i>
+                </div>
                 <h3>Our Mission</h3>
                 <p>
                     Raising a Giant Generation with bright minds and excellent spirits who will
@@ -117,7 +121,9 @@
             </div>
 
             <div class="mv-card mv-card--gold fade-up delay-2">
-                <div class="icon-box icon-box-gold" style="margin-bottom:20px;">🌟</div>
+                <div class="icon-box icon-box-gold" style="margin-bottom:20px;">
+                    <i class="bi bi-stars" style="color:var(--gold-dark);font-size:1.4rem;"></i>
+                </div>
                 <h3>Our Vision</h3>
                 <p>
                     To raise young people into world-class individuals who embody knowledge,
@@ -144,22 +150,55 @@
         </div>
 
         <div class="values-grid">
-            @foreach([
-                ['Excellence',      '⭐', 'We pursue the highest standard in all things.'],
-                ['Community',       '🤝', 'We grow stronger together, not apart.'],
-                ['Courage',         '🦁', 'We dare to dream big and act boldly.'],
-                ['Accountability',  '📋', 'We own our actions and keep our word.'],
-                ['Service',         '❤️',  'We give back and contribute to others.'],
-                ['Hard Work',       '💪', 'We know that greatness is earned.'],
-            ] as [$value, $icon, $desc])
+
             <div class="value-chip fade-up" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
                 <div style="display:flex;align-items:center;gap:10px;">
-                    <span style="font-size:1.3rem;">{{ $icon }}</span>
-                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">{{ $value }}</span>
+                    <i class="bi bi-patch-check-fill" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Excellence</span>
                 </div>
-                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">{{ $desc }}</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We pursue the highest standard in all things.</p>
             </div>
-            @endforeach
+
+            <div class="value-chip fade-up delay-1" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <i class="bi bi-people-fill" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Community</span>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We grow stronger together, not apart.</p>
+            </div>
+
+            <div class="value-chip fade-up delay-2" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <i class="bi bi-shield-fill-check" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Courage</span>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We dare to dream big and act boldly.</p>
+            </div>
+
+            <div class="value-chip fade-up delay-1" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <i class="bi bi-clipboard2-check-fill" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Accountability</span>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We own our actions and keep our word.</p>
+            </div>
+
+            <div class="value-chip fade-up delay-2" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <i class="bi bi-heart-fill" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Service</span>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We give back and contribute to others.</p>
+            </div>
+
+            <div class="value-chip fade-up delay-3" style="flex-direction:column;align-items:flex-start;gap:10px;padding:22px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <i class="bi bi-lightning-charge-fill" style="font-size:1.3rem;color:var(--gold);"></i>
+                    <span style="font-weight:700;font-size:1rem;color:var(--navy);">Hard Work</span>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;margin:0;">We know that greatness is earned.</p>
+            </div>
+
         </div>
 
     </div>
@@ -179,7 +218,9 @@
         <div class="leadership-grid">
 
             <div class="leader-card fade-up delay-1">
-                <div class="leader-card__img">👤</div>
+                <div class="leader-card__img">
+                    <i class="bi bi-person-circle" style="font-size:3.5rem;color:var(--navy);opacity:0.4;"></i>
+                </div>
                 <div class="leader-card__info">
                     <h4>Colman Jeremiah</h4>
                     <p>Founder & President</p>
@@ -187,7 +228,9 @@
             </div>
 
             <div class="leader-card fade-up delay-2">
-                <div class="leader-card__img">👤</div>
+                <div class="leader-card__img">
+                    <i class="bi bi-person-circle" style="font-size:3.5rem;color:var(--navy);opacity:0.4;"></i>
+                </div>
                 <div class="leader-card__info">
                     <h4>Odediran Dasola</h4>
                     <p>Vice President</p>

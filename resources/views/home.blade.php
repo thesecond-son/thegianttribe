@@ -14,7 +14,7 @@
         <div class="hero__content">
 
             <div class="hero__eyebrow">
-                ✦ Home of Possibilities
+                <i class="bi bi-stars"></i> Home of Possibilities
             </div>
 
             <h1>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="hero__scroll">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <i class="bi bi-chevron-down" style="font-size:1rem;opacity:0.5;"></i>
         Scroll
     </div>
 </section>
@@ -53,7 +53,9 @@
         <div class="stats-bar__inner">
 
             <div class="stats-bar__item">
-                <div class="stats-bar__icon">🎓</div>
+                <div class="stats-bar__icon">
+                    <i class="bi bi-mortarboard-fill" style="font-size:1.3rem;color:var(--navy);"></i>
+                </div>
                 <div>
                     <div class="stats-bar__num">4</div>
                     <div class="stats-bar__label">Active Programs</div>
@@ -61,7 +63,9 @@
             </div>
 
             <div class="stats-bar__item">
-                <div class="stats-bar__icon">🌍</div>
+                <div class="stats-bar__icon">
+                    <i class="bi bi-globe2" style="font-size:1.3rem;color:var(--navy);"></i>
+                </div>
                 <div>
                     <div class="stats-bar__num">2025</div>
                     <div class="stats-bar__label">Year Founded</div>
@@ -69,7 +73,9 @@
             </div>
 
             <div class="stats-bar__item">
-                <div class="stats-bar__icon">⭐</div>
+                <div class="stats-bar__icon">
+                    <i class="bi bi-infinity" style="font-size:1.3rem;color:var(--navy);"></i>
+                </div>
                 <div>
                     <div class="stats-bar__num">∞</div>
                     <div class="stats-bar__label">Possibilities</div>
@@ -127,7 +133,7 @@
 
                 <div style="margin-top: 32px;">
                     <a href="{{ route('about') }}" class="btn btn-navy">
-                        Our Full Story &rarr;
+                        Our Full Story <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -154,7 +160,9 @@
         <div class="programs-grid">
 
             <div class="program-card fade-up delay-1">
-                <div class="icon-box icon-box-navy">🧠</div>
+                <div class="icon-box icon-box-navy">
+                    <i class="bi bi-lightbulb-fill" style="color:var(--navy);font-size:1.4rem;"></i>
+                </div>
                 <h3>Giant Rebuild: S.E.T.</h3>
                 <p>
                     A school outreach program designed to sharpen learning skills,
@@ -168,7 +176,9 @@
             </div>
 
             <div class="program-card fade-up delay-2">
-                <div class="icon-box icon-box-gold">🏆</div>
+                <div class="icon-box icon-box-gold">
+                    <i class="bi bi-trophy-fill" style="color:var(--gold-dark);font-size:1.4rem;"></i>
+                </div>
                 <h3>Reward for Excellence</h3>
                 <p>
                     Recognizing and celebrating outstanding students in schools
@@ -182,7 +192,9 @@
             </div>
 
             <div class="program-card fade-up delay-3">
-                <div class="icon-box icon-box-navy">💻</div>
+                <div class="icon-box icon-box-navy">
+                    <i class="bi bi-laptop-fill" style="color:var(--navy);font-size:1.4rem;"></i>
+                </div>
                 <h3>Online Teaching Sessions</h3>
                 <p>
                     Virtual sessions covering leadership, personal development,
@@ -196,7 +208,9 @@
             </div>
 
             <div class="program-card fade-up delay-4">
-                <div class="icon-box icon-box-gold">🎯</div>
+                <div class="icon-box icon-box-gold">
+                    <i class="bi bi-bullseye" style="color:var(--gold-dark);font-size:1.4rem;"></i>
+                </div>
                 <h3>Online Workshops</h3>
                 <p>
                     Interactive workshops and competitions including Vision Workshop
@@ -213,7 +227,7 @@
 
         <div style="text-align:center;margin-top:40px;">
             <a href="{{ route('programs') }}" class="btn btn-navy">
-                Explore All Programs &rarr;
+                Explore All Programs <i class="bi bi-arrow-right"></i>
             </a>
         </div>
 

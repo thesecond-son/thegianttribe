@@ -24,13 +24,13 @@
         {{-- Alerts --}}
         @if (session('success'))
             <div class="alert alert-success">
-                ✓ {{ session('success') }}
+                <i class="bi bi-check-circle-fill"></i> {{ session('success') }}
             </div>
         @endif
 
         @if ($errors->any())
             <div class="alert alert-error">
-                <strong>Please fix the following:</strong>
+                <strong><i class="bi bi-exclamation-triangle-fill"></i> Please fix the following:</strong>
                 <ul style="margin-top:8px;padding-left:16px;display:flex;flex-direction:column;gap:4px;">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -46,7 +46,9 @@
 
                 <div class="form-card__header">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
-                        <div class="icon-box icon-box-navy" style="margin-bottom:0;width:44px;height:44px;font-size:1.2rem;">🎓</div>
+                        <div class="icon-box icon-box-navy" style="margin-bottom:0;width:44px;height:44px;">
+                            <i class="bi bi-mortarboard-fill" style="font-size:1.3rem;color:var(--navy);"></i>
+                        </div>
                         <h2>Join as a Student</h2>
                     </div>
                     <p>Fill in your details to become part of The Giant Tribe Community.</p>
@@ -122,7 +124,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-navy btn-lg" style="width:100%;justify-content:center;margin-top:8px;">
-                        Join as a Student &rarr;
+                        Join as a Student <i class="bi bi-arrow-right"></i>
                     </button>
 
                 </form>
@@ -133,7 +135,9 @@
 
                 <div class="form-card__header">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
-                        <div class="icon-box icon-box-gold" style="margin-bottom:0;width:44px;height:44px;font-size:1.2rem;">🤝</div>
+                        <div class="icon-box icon-box-gold" style="margin-bottom:0;width:44px;height:44px;">
+                            <i class="bi bi-handshake" style="font-size:1.3rem;color:var(--gold-dark);"></i>
+                        </div>
                         <h2>Partner With Us</h2>
                     </div>
                     <p>Schools, organizations, and individuals can partner with TGT to expand our impact.</p>
@@ -201,7 +205,7 @@
                     <div style="height:74px;"></div>
 
                     <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-top:8px;color:var(--navy-dark);">
-                        Submit Partnership Request &rarr;
+                        Submit Partnership Request <i class="bi bi-arrow-right"></i>
                     </button>
 
                 </form>
@@ -211,7 +215,7 @@
 
         {{-- VOLUNTEER CTA --}}
         <div class="volunteer-cta fade-up" style="margin-top:40px;">
-            <div style="font-size:2rem;margin-bottom:12px;">🙋</div>
+            <i class="bi bi-hand-index-thumb-fill" style="font-size:2.2rem;color:rgba(255,255,255,0.7);margin-bottom:12px;display:block;"></i>
             <h3>Want to Volunteer?</h3>
             <p>
                 We're always looking for passionate people to join our volunteer team.

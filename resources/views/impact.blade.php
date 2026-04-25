@@ -27,7 +27,6 @@
             <p>This section grows as TGT does. Check back for photos and highlights from our programs.</p>
         </div>
 
-        {{-- Gallery Grid — replace placeholder images with real photos when available --}}
         <div class="gallery-grid">
 
             <div class="gallery-item gallery-item--tall">
@@ -79,19 +78,24 @@
                 and community moments.
             </p>
 
+            {{-- SOCIAL BUTTONS --}}
             <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
+
                 <a href="https://instagram.com/thegianttribe_" target="_blank"
                    class="btn btn-outline-navy btn-sm" style="gap:8px;">
-                    📸 Instagram
+                    <i class="bi bi-instagram"></i> Instagram
                 </a>
+
                 <a href="https://tiktok.com/@the.giant.tribe" target="_blank"
                    class="btn btn-outline-navy btn-sm" style="gap:8px;">
-                    🎵 TikTok
+                    <i class="bi bi-tiktok"></i> TikTok
                 </a>
+
                 <a href="https://t.me/thegainttribe" target="_blank"
                    class="btn btn-outline-navy btn-sm" style="gap:8px;">
-                    ✈️ Telegram
+                    <i class="bi bi-telegram"></i> Telegram
                 </a>
+
             </div>
         </div>
 

@@ -24,7 +24,9 @@
         {{-- Program 1 --}}
         <div class="program-block fade-up">
             <div class="program-block__header">
-                <div class="icon-box icon-box-navy" style="width:60px;height:60px;font-size:1.7rem;">🧠</div>
+                <div class="icon-box icon-box-navy" style="width:60px;height:60px;font-size:1.7rem;">
+                    <i class="bi bi-lightbulb-fill" style="color:var(--navy);"></i>
+                </div>
                 <div>
                     <span class="tag tag-gold" style="margin-bottom:8px;display:inline-flex;">School Outreach</span>
                     <h2>Giant Rebuild: S.E.T.</h2>
@@ -48,11 +50,11 @@
 
             <div class="program-block__details">
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <i class="bi bi-person-fill"></i>
                     Secondary School Students
                 </span>
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    <i class="bi bi-house-fill"></i>
                     School Outreach / In-Class Sessions
                 </span>
             </div>
@@ -61,7 +63,9 @@
         {{-- Program 2 --}}
         <div class="program-block fade-up delay-1">
             <div class="program-block__header">
-                <div class="icon-box icon-box-gold" style="width:60px;height:60px;font-size:1.7rem;">🏆</div>
+                <div class="icon-box icon-box-gold" style="width:60px;height:60px;font-size:1.7rem;">
+                    <i class="bi bi-trophy-fill" style="color:var(--gold-dark);"></i>
+                </div>
                 <div>
                     <span class="tag tag-gold" style="margin-bottom:8px;display:inline-flex;">Recognition Initiative</span>
                     <h2>Reward for Excellence Outreach</h2>
@@ -77,11 +81,11 @@
 
             <div class="program-block__details">
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <i class="bi bi-person-fill"></i>
                     Secondary School Students
                 </span>
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    <i class="bi bi-house-fill"></i>
                     School Outreach
                 </span>
             </div>
@@ -90,7 +94,9 @@
         {{-- Program 3 --}}
         <div class="program-block fade-up delay-2">
             <div class="program-block__header">
-                <div class="icon-box icon-box-navy" style="width:60px;height:60px;font-size:1.7rem;">💻</div>
+                <div class="icon-box icon-box-navy" style="width:60px;height:60px;font-size:1.7rem;">
+                    <i class="bi bi-laptop-fill" style="color:var(--navy);"></i>
+                </div>
                 <div>
                     <span class="tag tag-gold" style="margin-bottom:8px;display:inline-flex;">Virtual Program</span>
                     <h2>Online Teaching Sessions</h2>
@@ -105,11 +111,11 @@
 
             <div class="program-block__details">
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <i class="bi bi-people-fill"></i>
                     Students / Young People
                 </span>
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <i class="bi bi-display"></i>
                     Online / Virtual Sessions
                 </span>
             </div>
@@ -118,7 +124,9 @@
         {{-- Program 4 --}}
         <div class="program-block fade-up delay-3">
             <div class="program-block__header">
-                <div class="icon-box icon-box-gold" style="width:60px;height:60px;font-size:1.7rem;">🎯</div>
+                <div class="icon-box icon-box-gold" style="width:60px;height:60px;font-size:1.7rem;">
+                    <i class="bi bi-bullseye" style="color:var(--gold-dark);"></i>
+                </div>
                 <div>
                     <span class="tag tag-gold" style="margin-bottom:8px;display:inline-flex;">Interactive Workshop</span>
                     <h2>Online Workshops</h2>
@@ -134,11 +142,11 @@
 
             <div class="program-block__details">
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <i class="bi bi-people-fill"></i>
                     Students / Young People
                 </span>
                 <span class="detail-pill">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <i class="bi bi-patch-check-fill"></i>
                     Online Workshops & Competitions
                 </span>
             </div>
