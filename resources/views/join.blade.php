@@ -136,7 +136,7 @@
                 <div class="form-card__header">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
                         <div class="icon-box icon-box-gold" style="margin-bottom:0;width:44px;height:44px;">
-                            <i class="bi bi-handshake" style="font-size:1.3rem;color:var(--gold-dark);"></i>
+                            <i class="bi bi-people" style="font-size:1.3rem;color:var(--gold-dark);"></i>
                         </div>
                         <h2>Partner With Us</h2>
                     </div>

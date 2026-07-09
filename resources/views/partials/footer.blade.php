@@ -6,7 +6,7 @@
             {{-- Brand Column --}}
             <div>
                 <div class="footer__brand-name">
-                    <div class="badge">TGT</div>
+                    <!-- <div class="badge">TGT</div> -->
                     The Giant Tribe Community
                 </div>
                 <p class="footer__tagline">

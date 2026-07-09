@@ -299,9 +299,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(13, 45, 138, 0.98);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             padding: 0;
         }
 
@@ -313,29 +313,27 @@
         }
 
         .navbar__logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--white);
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
         }
 
-        .navbar__logo-badge {
-            width: 36px;
-            height: 36px;
-            background: var(--gold);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 900;
-            color: var(--navy-dark);
-            letter-spacing: 0;
-            font-family: 'Bricolage Grotesque', sans-serif;
+        /* Logo image */
+        .navbar__logo-img {
+        height: 40px;          /* control size here */
+        width: auto;
+        display: block;
+        object-fit: contain;
+        }
+
+        /* Text */
+        .navbar__logo-text {
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-weight: 800;
+        font-size: 1.08rem;
+        letter-spacing: -0.02em;
+        color: var(--navy);
         }
 
         .navbar__links {
@@ -345,7 +343,7 @@
         }
 
         .navbar__links a {
-            color: rgba(255,255,255,0.78);
+            color: rgba(13,45,138,0.75);
             font-size: 0.9rem;
             font-weight: 500;
             padding: 7px 14px;
@@ -356,8 +354,8 @@
 
         .navbar__links a:hover,
         .navbar__links a.active {
-            color: var(--white);
-            background: rgba(255,255,255,0.1);
+            color: var(--navy);
+            background: rgba(13,45,138,0.08);
         }
 
         .navbar__cta {
@@ -384,7 +382,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--white);
+            background: var(--navy);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -392,20 +390,23 @@
         .navbar__mobile {
             display: none;
             flex-direction: column;
-            background: var(--navy-dark);
-            border-top: 1px solid rgba(255,255,255,0.08);
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
             padding: 16px 0 24px;
         }
 
         .navbar__mobile a {
-            color: rgba(255,255,255,0.8);
+            color: rgba(13,45,138,0.8);
             font-weight: 500;
             padding: 12px 24px;
             display: block;
             transition: var(--transition);
         }
 
-        .navbar__mobile a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+        .navbar__mobile a:hover { 
+            color: var(--navy); 
+            background: rgba(13,45,138,0.06);
+        }
 
         .navbar__mobile .navbar__cta {
             margin: 12px 24px 0;
@@ -813,14 +814,14 @@
             margin-top: 28px;
         }
 
-        /* ---- Programs Grid ---- */
-        .programs-grid {
+        /* ---- Programs Card (Homepage) Grid ---- */
+        .h-programs-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
-        .program-card {
+        .h-program-card {
             background: var(--white);
             border-radius: var(--radius-lg);
             padding: 32px;
@@ -830,7 +831,7 @@
             overflow: hidden;
         }
 
-        .program-card::before {
+        .h-program-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -843,30 +844,112 @@
             transition: transform 0.35s var(--ease);
         }
 
-        .program-card:hover {
+        .h-program-card:hover {
             border-color: transparent;
             box-shadow: var(--shadow-lg);
             transform: translateY(-4px);
         }
 
-        .program-card:hover::before { transform: scaleX(1); }
+        .h-program-card:hover::before { 
+            transform: scaleX(1); 
+        }
 
-        .program-card h3 {
+        .h-program-card h3 {
             color: var(--navy);
             margin-bottom: 10px;
             font-size: 1.15rem;
         }
 
-        .program-card p {
+        .h-program-card p {
             font-size: 0.92rem;
             line-height: 1.7;
         }
 
-        .program-card__meta {
+        .h-program-card__meta {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             margin-top: 18px;
+        }
+
+
+        /* Programs Card (Programs page) */
+        .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        }
+
+        /* Card */
+        .program-card {
+        background: #fff;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,.06);
+        transition: all .3s ease;
+        }
+
+        .program-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(0,0,0,.08);
+        }
+
+        /* IMAGE (this is the key upgrade) */
+        .program-card__image {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+        }
+
+        .program-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .6s ease;
+        }
+
+        .program-card:hover .program-card__image img {
+        transform: scale(1.08);
+        }
+
+        /* Optional overlay for depth */
+        .program-card__image::after {
+        content:'';
+        position:absolute;
+        inset:0;
+        background:linear-gradient(to bottom, transparent, rgba(0,0,0,.25));
+        }
+
+        /* Content */
+        .program-card__content {
+        padding: 22px 24px 24px;
+        }
+
+        .program-card h3 {
+        color: var(--navy);
+        margin: 10px 0 8px;
+        font-size: 1.2rem;
+        }
+
+        .program-card p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        }
+
+        /* Meta */
+        .program-card__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+        .programs-grid {
+            grid-template-columns: 1fr;
+        }
         }
 
         /* ---- CTA Section ---- */
@@ -1299,6 +1382,8 @@
             }
         });
     </script>
+
+    @stack('scripts')
 
 </body>
 </html>

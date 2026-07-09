@@ -6,59 +6,52 @@
      HERO
 ============================================================ --}}
 <section class="hero">
+
+    {{-- Background image --}}
     <div class="hero__bg"></div>
-    <div class="hero__dots"></div>
+
+    {{-- Overlay (for readability) --}}
+    <div class="hero__overlay"></div>
 
     <div class="container">
-        <div class="hero__split">
+        <div class="hero__content">
 
-            {{-- Left: Text Content --}}
-            <div class="hero__content">
-
-                <div class="hero__eyebrow">
-                    <i class="bi bi-stars"></i> Home of Possibilities
-                </div>
-
-                <h1>
-                    Raising a<br>
-                    <span class="accent">Giant Generation</span>
-                </h1>
-
-                <p>
-                    We empower young people with the knowledge, mindset, and community
-                    they need to achieve greatness and make a lasting impact in the world.
-                </p>
-
-                <div class="hero__buttons">
-                    <a href="{{ route('join') }}" class="btn btn-primary btn-lg">
-                        Join the Community
-                    </a>
-                    <a href="{{ route('about') }}" class="btn btn-outline btn-lg">
-                        Learn More
-                    </a>
-                </div>
-
+            <div class="hero__eyebrow">
+                <i class="bi bi-stars"></i> Home of Possibilities
             </div>
 
-            {{-- Right: Photo --}}
-            <div class="hero__photo">
-                <div class="hero__photo-wrap">
-                    <img src="{{ asset('images/gallery/IMG_20260416_004056_654.jpg') }}"
-                         alt="TGT outreach — Raising Young People">
-                </div>
-                <div class="hero__photo-badge">
-                    <i class="bi bi-people-fill" style="color:var(--navy);font-size:1rem;"></i>
-                    <span>Real Impact. Real People.</span>
-                </div>
+            <h1>
+                Raising a<br>
+                <span class="accent">Giant Generation</span>
+            </h1>
+
+            <p>
+                We empower young people with the knowledge, mindset, and community
+                they need to achieve greatness and make a lasting impact in the world.
+            </p>
+
+            <div class="hero__buttons">
+                <a href="{{ route('join') }}" class="btn btn-primary btn-lg">
+                    Join the Community
+                </a>
+                <a href="{{ route('about') }}" class="btn btn-outline btn-lg">
+                    Learn More
+                </a>
             </div>
 
         </div>
     </div>
 
+    <div class="hero__badge">
+        <i class="bi bi-people-fill"></i>
+        Real Impact. Real People.
+    </div>
+
     <div class="hero__scroll">
-        <i class="bi bi-chevron-down" style="font-size:1rem;opacity:0.5;"></i>
+        <i class="bi bi-chevron-down"></i>
         Scroll
     </div>
+
 </section>
 
 {{-- ============================================================
@@ -80,21 +73,21 @@
 
             <div class="stats-bar__item">
                 <div class="stats-bar__icon">
-                    <i class="bi bi-globe2" style="font-size:1.3rem;color:var(--navy);"></i>
-                </div>
-                <div>
-                    <div class="stats-bar__num">2025</div>
-                    <div class="stats-bar__label">Year Founded</div>
-                </div>
-            </div>
-
-            <div class="stats-bar__item">
-                <div class="stats-bar__icon">
                     <i class="bi bi-infinity" style="font-size:1.3rem;color:var(--navy);"></i>
                 </div>
                 <div>
                     <div class="stats-bar__num">∞</div>
                     <div class="stats-bar__label">Possibilities</div>
+                </div>
+            </div>
+
+            <div class="stats-bar__item">
+                <div class="stats-bar__icon">
+                    <i class="bi bi-globe2" style="font-size:1.3rem;color:var(--navy);"></i>
+                </div>
+                <div>
+                    <div class="stats-bar__num">2025</div>
+                    <div class="stats-bar__label">Year Founded</div>
                 </div>
             </div>
 
@@ -173,9 +166,9 @@
             </p>
         </div>
 
-        <div class="programs-grid">
+        <div class="h-programs-grid">
 
-            <div class="program-card fade-up delay-1">
+            <div class="h-program-card fade-up delay-1">
                 <div class="icon-box icon-box-navy">
                     <i class="bi bi-lightbulb-fill" style="color:var(--navy);font-size:1.4rem;"></i>
                 </div>
@@ -185,13 +178,13 @@
                     prepare students for exams, and develop a thriving mindset
                     capable of solving real-world problems.
                 </p>
-                <div class="program-card__meta">
+                <div class="h-program-card__meta">
                     <span class="tag tag-gold">Secondary School</span>
                     <span class="tag tag-navy">School Outreach</span>
                 </div>
             </div>
 
-            <div class="program-card fade-up delay-2">
+            <div class="h-program-card fade-up delay-2">
                 <div class="icon-box icon-box-gold">
                     <i class="bi bi-trophy-fill" style="color:var(--gold-dark);font-size:1.4rem;"></i>
                 </div>
@@ -201,13 +194,13 @@
                     and communities, inspiring a culture of excellence and
                     healthy competition among young people.
                 </p>
-                <div class="program-card__meta">
+                <div class="h-program-card__meta">
                     <span class="tag tag-gold">Secondary School</span>
                     <span class="tag tag-navy">School Outreach</span>
                 </div>
             </div>
 
-            <div class="program-card fade-up delay-3">
+            <div class="h-program-card fade-up delay-3">
                 <div class="icon-box icon-box-navy">
                     <i class="bi bi-laptop-fill" style="color:var(--navy);font-size:1.4rem;"></i>
                 </div>
@@ -217,13 +210,13 @@
                     and success principles — educating and equipping young
                     people beyond the classroom.
                 </p>
-                <div class="program-card__meta">
+                <div class="h-program-card__meta">
                     <span class="tag tag-gold">Young People</span>
                     <span class="tag tag-navy">Virtual</span>
                 </div>
             </div>
 
-            <div class="program-card fade-up delay-4">
+            <div class="h-program-card fade-up delay-4">
                 <div class="icon-box icon-box-gold">
                     <i class="bi bi-bullseye" style="color:var(--gold-dark);font-size:1.4rem;"></i>
                 </div>
@@ -233,7 +226,7 @@
                     sessions that help students discover their purpose and develop
                     skills that matter.
                 </p>
-                <div class="program-card__meta">
+                <div class="h-program-card__meta">
                     <span class="tag tag-gold">Young People</span>
                     <span class="tag tag-navy">Online</span>
                 </div>
@@ -283,6 +276,88 @@
 
 {{-- Hero Split Layout Styles --}}
 <style>
+    .hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Background image */
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background: url('/images/gallery/IMG_20260407_001022_337.jpg') center/cover no-repeat;
+  z-index: 0;
+  transform: scale(1.05); /* slight zoom = premium feel */
+  animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+/* Dark overlay for readability */
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8, 30, 94, 0.85) 0%,
+    rgba(8, 30, 94, 0.75) 40%,
+    rgba(8, 30, 94, 0.4) 70%,
+    rgba(8, 30, 94, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* Content */
+.hero__content{
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  padding: 120px 0;
+  animation: heroFadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes heroFadeIn{
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+/* Typography tweaks for contrast */
+.hero h1{
+  color:#fff;
+}
+
+.hero p{
+  color: rgba(255,255,255,0.85);
+}
+
+.hero__badge{
+  position:absolute;
+  bottom:40px;
+  right:40px;
+  z-index:2;
+  background:var(--gold);
+  color:var(--navy-dark);
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* Scroll indicator */
+.hero__scroll{
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
     .hero__split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -358,6 +433,67 @@
             aspect-ratio: 16/9;
         }
     }
+
+    @keyframes heroZoom{
+  from{ transform: scale(1.05); }
+  to{ transform: scale(1.12); }
+}
+
+/* Base hidden state */
+.fade-up{
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.fade-up.in-view{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight variations */
+.fade-up.fast{
+  transition-duration: 0.6s;
+}
+
+.fade-up.slow{
+  transition-duration: 1s;
+}
+
+.fade-up.subtle{
+  transform: translateY(20px);
+}
+
+/* Optional stagger delays */
+.delay-1{ transition-delay: .1s; }
+.delay-2{ transition-delay: .2s; }
+.delay-3{ transition-delay: .3s; }
+.delay-4{ transition-delay: .4s; }
 </style>
 
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      setTimeout(() => {
+        entry.target.classList.add('in-view');
+      }, 100); // small delay so you SEE the animation
+    }
+  });
+}, {
+  threshold: 0.25,
+  rootMargin: "0px 0px -100px 0px"
+});
+
+elements.forEach(el => observer.observe(el));
+
+});
+</script>
+@endpush
 @endsection

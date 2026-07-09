@@ -4,8 +4,8 @@
 
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="navbar__logo">
-                <div class="navbar__logo-badge">TGT</div>
-                <span>The Giant Tribe</span>
+                <img src="/images/giant-tribe-logo.png" alt="The Giant Tribe Logo" class="navbar__logo-img">
+                <span class="navbar__logo-text">The Giant Tribe</span>
             </a>
 
             {{-- Desktop nav links --}}

@@ -3,9 +3,14 @@
 @section('content')
 
 {{-- Page Hero --}}
-<section class="page-hero">
-    <div class="page-hero__dots"></div>
-    <div class="container page-hero__inner">
+<section class="a-page-hero">
+
+    <div class="a-page-hero__bg">
+    <img src="/images/gallery/IMG_20260416_004921_872.jpg" alt="">
+    </div>
+
+    <div class="a-page-hero__dots"></div>
+    <div class="container a-page-hero__inner">
         <span class="section-label">Our Story</span>
         <h1>About The Giant<br>Tribe Community</h1>
         <p>
@@ -294,4 +299,64 @@
     </div>
 </section>
 
+<style>
+    .a-page-hero {
+            background: var(--navy);
+            padding: clamp(56px, 7vw, 96px) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+     /* Background image layer */
+     .a-page-hero__bg{
+        position:absolute;
+        inset:0;
+        overflow:hidden;
+        }
+
+        .a-page-hero__bg img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            object-position: center 45%;
+            transform: scale(1.05); /* now this works properly */
+        }
+
+     .a-page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(13,45,138,0.82);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .a-page-hero__dots {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .a-page-hero__inner {
+            position: relative;
+            z-index: 3;
+        }
+
+        .a-page-hero .section-label { color: rgba(255,179,0,0.85); }
+        .a-page-hero .section-label::before { background: rgba(255,179,0,0.85); }
+
+        .a-page-hero h1 {
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+
+        .a-page-hero p {
+            color: rgba(255,255,255,0.7);
+            max-width: 580px;
+            font-size: 1.05rem;
+        }
+</style>
 @endsection

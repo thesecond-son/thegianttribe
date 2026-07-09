@@ -3,9 +3,14 @@
 @section('content')
 
 {{-- Page Hero --}}
-<section class="page-hero">
-    <div class="page-hero__dots"></div>
-    <div class="container page-hero__inner">
+<section class="i-page-hero">
+
+    <div class="i-page-hero__bg">
+    <img src="/images/gallery/IMG_20260416_004049_084.jpg" alt="">
+    </div>
+
+    <div class="i-page-hero__dots"></div>
+    <div class="container i-page-hero__inner">
         <span class="section-label">Our Work</span>
         <h1>Impact &<br>Activities</h1>
         <p>
@@ -113,6 +118,65 @@
 
 {{-- Styles --}}
 <style>
+    .i-page-hero {
+            background: var(--navy);
+            padding: clamp(56px, 7vw, 96px) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+     /* Background image layer */
+     .i-page-hero__bg{
+        position:absolute;
+        inset:0;
+        overflow:hidden;
+        }
+
+        .i-page-hero__bg img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            object-position: center 45%;
+            transform: scale(1.05); /* now this works properly */
+        }
+
+     .i-page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(13,45,138,0.82);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .i-page-hero__dots {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .i-page-hero__inner {
+            position: relative;
+            z-index: 3;
+        }
+
+        .i-page-hero .section-label { color: rgba(255,179,0,0.85); }
+        .i-page-hero .section-label::before { background: rgba(255,179,0,0.85); }
+
+        .i-page-hero h1 {
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+
+        .i-page-hero p {
+            color: rgba(255,255,255,0.7);
+            max-width: 580px;
+            font-size: 1.05rem;
+        }
+
     /* ---- Tabs ---- */
     .gallery-tabs {
         display: flex;
